@@ -3,8 +3,8 @@ import { snacks } from "../snacks.js";
 
 function Items() {
   return (
-    <div className="bg-primary-color max-lg:w-screen z-0">
-      <ul className="grid grid-cols-4 gap-1 h-screen">
+    <div className="bg-primary-color max-lg:w-screen  z-0">
+      <ul className="grid grid-cols-4 gap-1 h-screen overflow-y-scroll">
         {snacks.map((snack) => (
           <li
             key={snack.id}

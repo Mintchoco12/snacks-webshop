@@ -47,7 +47,7 @@ function Keypad() {
                       : button === "Enter"
                       ? "bg-green-500"
                       : "bg-white text-black"
-                  } border-2 border-black text-white font-bold rounded-md p-2 m-1`}
+                  } border-2 border-black font-bold rounded-md p-2 m-1`}
                 >
                   {button}
                 </button>
