@@ -9,6 +9,9 @@ module.exports = {
         "tertiary-color": "#00adb5",
         "quaternary-color": "#eeeeee",
       },
+      transitionProperty: {
+        height: "height",
+      },
     },
   },
   plugins: [],
