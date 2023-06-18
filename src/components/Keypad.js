@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { snacks } from "../snacks.js";
 
 export const buttons = [
   ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -13,9 +14,24 @@ function Keypad() {
       case "C":
         setDisplayNumber("");
         break;
+
       case "Enter":
-        console.log("Entered number: ", displayNumber);
-        break;
+        if (displayNumber <= 0 || displayNumber > snacks.length) {
+          setDisplayNumber("ERROR");
+          setTimeout(() => {
+            setDisplayNumber("");
+          }, 1000);
+          break;
+        } else {
+          const snack = snacks[displayNumber - 1];
+          const { name, description, image } = snack;
+          setDisplayNumber("SUCCESS");
+          setTimeout(() => {
+            setDisplayNumber("");
+          }, 1000);
+          break;
+        }
+
       default:
         if (displayNumber.length < 3) {
           setDisplayNumber(displayNumber + button);

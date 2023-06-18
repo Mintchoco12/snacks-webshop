@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Keypad from "./Keypad";
+import Cart from "./Cart";
 import { ImMenu2 } from "react-icons/im";
 
 function Menu() {
@@ -22,11 +23,12 @@ function Menu() {
         </button>
       </div>
       <div
-        className={`bg-tertiary-color absolute bottom-0 left-0 p-5 w-screen h-2/5 duration-500 transition ease-in-out bg-opacity-95 ${
+        className={`bg-tertiary-color flex justify-around absolute bottom-0 left-0 p-5 w-screen h-2/5 duration-500 transition ease-in-out bg-opacity-95 ${
           showMenu ? "translate-y-0" : "translate-y-full"
         }`}
       >
         <Keypad />
+        <Cart />
       </div>
     </div>
   );
