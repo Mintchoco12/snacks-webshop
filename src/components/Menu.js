@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Keypad from "./Keypad";
-import Cart from "./Cart";
+import CartButtons from "./CartButtons";
 import { ImMenu2 } from "react-icons/im";
 
-function Menu() {
-  const [showMenu, setShowMenu] = useState(false);
-
+function Menu({ showMenu, setShowMenu, showOverlay, setShowOverlay }) {
   return (
     <div
       className={`flex absolute bottom-0 w-screen z-10 transition-height duration-500 ease-in-out ${
@@ -17,7 +15,7 @@ function Menu() {
           onClick={() => {
             setShowMenu(!showMenu);
           }}
-          className="bg-tertiary-color opacity-60 hover:opacity-90 w-12 h-12 rounded-full absolute flex items-center justify-center border-2 border-black"
+          className="bg-white opacity-60 hover:opacity-90 w-12 h-12 rounded-full absolute flex items-center justify-center border-2 border-black"
         >
           <ImMenu2 className="r" size={30} />
         </button>
@@ -28,7 +26,10 @@ function Menu() {
         }`}
       >
         <Keypad />
-        <Cart />
+        <CartButtons
+          showOverlay={showOverlay}
+          setShowOverlay={setShowOverlay}
+        />
       </div>
     </div>
   );

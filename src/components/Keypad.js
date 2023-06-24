@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { snacks } from "../snacks.js";
+import { cartItems, addToCart } from "./cartItems.js";
 
 export const buttons = [
   ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
@@ -24,7 +25,7 @@ function Keypad() {
           break;
         } else {
           const snack = snacks[displayNumber - 1];
-          const { name, description, image } = snack;
+          addToCart(snack);
           setDisplayNumber("SUCCESS");
           setTimeout(() => {
             setDisplayNumber("");

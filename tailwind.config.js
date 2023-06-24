@@ -9,6 +9,9 @@ module.exports = {
         "tertiary-color": "#00adb5",
         "quaternary-color": "#eeeeee",
       },
+      height: {
+        "9/10": "90%",
+      },
       transitionProperty: {
         height: "height",
       },
