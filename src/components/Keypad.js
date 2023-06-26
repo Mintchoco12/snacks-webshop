@@ -23,7 +23,14 @@ function Keypad() {
             setDisplayNumber("");
           }, 1000);
           break;
-        } else {
+        } else if (cartItems.length === 9) {
+          setDisplayNumber("FULL");
+          setTimeout(() => {
+            setDisplayNumber("");
+          }, 1000);
+          break;
+        }
+        else {
           const snack = snacks[displayNumber - 1];
           addToCart(snack);
           setDisplayNumber("SUCCESS");
@@ -44,7 +51,13 @@ function Keypad() {
   return (
     <div className="flex justify-center h-full items-center flex-col">
       <div className="bg-white rounded-md border-2 border-black mb-5 font-bold text-lg">
-        <p className="h-12 w-48 flex items-center justify-center">
+        <p className={`h-12 w-48 flex items-center justify-center ${
+          displayNumber === "ERROR" || displayNumber === "FULL"
+            ? "text-red-500"
+            : displayNumber === "SUCCESS"
+            ? "text-green-500"
+            : "text-black"
+        }`}>
           {displayNumber}
         </p>
       </div>
@@ -56,7 +69,7 @@ function Keypad() {
                 <button
                   key={buttonIndex}
                   onClick={() => handleButtonClick(button)}
-                  className={`${
+                  className={`border-2 border-black font-bold rounded-md p-2 m-1 ${
                     button === "C"
                       ? "bg-red-500"
                       : button === "0"
@@ -64,7 +77,7 @@ function Keypad() {
                       : button === "Enter"
                       ? "bg-green-500"
                       : "bg-white text-black"
-                  } border-2 border-black font-bold rounded-md p-2 m-1`}
+                  }`}
                 >
                   {button}
                 </button>

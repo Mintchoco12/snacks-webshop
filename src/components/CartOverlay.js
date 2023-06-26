@@ -13,17 +13,17 @@ function CartOverlay({ showOverlay, showMenu }) {
       }`}
     >
       <div className="bg-tertiary-color w-11/12 h-9/10 rounded-lg border-2 border-white z-10">
+        <ul className="z-20 grid grid-cols-3 grid-rows-4 w-full h-full">
         {cartItems.map((snack) => (
-          <ul key={generateRandomKey()} className="z-20 object-contain">
-            <li>
+            <li key={generateRandomKey()} className="flex justify-center m-1">
               <img
                 src={snack.image}
                 alt={snack.name}
-                className="object-fit h-20 rounded-lg"
+                className="object-contain w-28 rounded-lg"
               />
             </li>
-          </ul>
         ))}
+        </ul>
       </div>
       <div
         className={`h-full w-full bg-black fixed z-0 ${
