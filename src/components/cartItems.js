@@ -2,7 +2,6 @@ export const cartItems = [];
 
 export const addToCart = (snack) => {
   cartItems.push(snack);
-  console.log(cartItems);
 };
 
 export const removeFromCart = (snack) => {

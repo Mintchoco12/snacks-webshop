@@ -26,9 +26,7 @@ function CartOverlay({ showOverlay, showMenu }) {
         </ul>
       </div>
       <div
-        className={`h-full w-full bg-black fixed z-0 ${
-          showOverlay && showMenu ? "opacity-60" : "opacity-0"
-        }`}
+        className={`h-full w-full bg-black fixed z-0 opacity-60 transition duration-500 ease-in-out`}
       ></div>
     </div>
   );
